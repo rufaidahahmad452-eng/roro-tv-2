@@ -1,4 +1,3 @@
-
 .movies-page {
     min-height: 100vh;
     padding: 110px 50px 60px;
@@ -7,30 +6,37 @@
         radial-gradient(
             circle at top left,
             rgba(70, 45, 120, 0.18),
-            transparent 35% ), #08080d;
+            transparent 35%
+        ),
+        #08080d;
     color: white;
 }
+
 .movies-header {
     max-width: 1200px;
     margin: 0 auto 40px;
 }
+
 .movies-header h1 {
     margin: 0 0 8px;
     font-size: 42px;
     font-weight: 700;
     letter-spacing: -1px;
 }
+
 .movies-header p {
     margin: 0 0 28px;
     color: #aaa;
     font-size: 16px;
 }
+
 .movies-filters {
     display: flex;
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
 }
+
 .movies-filters button {
     border: none;
     outline: none;
@@ -46,16 +52,24 @@
         color 0.25s ease,
         transform 0.25s ease;
 }
+
 .movies-filters button:hover {
     background: rgba(255, 255, 255, 0.15);
     color: white;
     transform: translateY(-2px);
 }
+
 .movies-filters button.active {
     background: #ffffff;
     color: #111;
     box-shadow: 0 5px 20px rgba(255, 255, 255, 0.12);
 }
+
+
+/* =========================
+   Movies Grid
+========================= */
+
 .movies-grid {
     width: 100%;
     max-width: 1200px;
@@ -66,6 +80,16 @@
     gap: 28px 22px;
 }
 
+.movies-grid .movie-card {
+    width: 180px;
+    min-width: 180px;
+}
+
+
+/* =========================
+   Pagination
+========================= */
+
 .pagination {
     display: flex;
     align-items: center;
@@ -73,6 +97,7 @@
     gap: 10px;
     margin-top: 50px;
 }
+
 .pagination button {
     width: 42px;
     height: 42px;
@@ -89,72 +114,140 @@
         transform 0.25s ease,
         color 0.25s ease;
 }
+
 .pagination button:hover:not(:disabled) {
     background: rgba(65, 80, 145, 0.9);
     transform: translateY(-2px);
 }
+
 .pagination button.active {
     background: #ffffff;
     color: #151515;
     box-shadow: 0 5px 18px rgba(255, 255, 255, 0.15);
 }
+
 .pagination button:disabled {
     opacity: 0.35;
     cursor: not-allowed;
 }
 
-@media (max-width: 768px) {
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1100px) {
+    .movies-grid {
+        grid-template-columns: repeat(4, 180px);
+    }
+}
+
+
+/* =========================
+   Small Tablet
+========================= */
+
+@media (max-width: 900px) {
     .movies-page {
-        padding: 90px 20px 40px;
+        padding: 100px 30px 50px;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(3, 180px);
+    }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 650px) {
+    .movies-page {
+        padding: 90px 18px 40px;
         overflow-x: hidden;
     }
+
     .movies-header {
         padding: 20px 0 25px;
         margin: 0;
     }
+
     .movies-header h1 {
-        font-size: 38px;
+        font-size: 32px;
     }
+
     .movies-header p {
-        font-size: 16px;
+        font-size: 14px;
         margin: 8px 0 22px;
     }
+
     .movies-filters {
         display: flex;
         flex-wrap: nowrap;
-        gap: 10px;
+        gap: 8px;
         width: 100%;
         overflow-x: auto;
         padding-bottom: 8px;
         scrollbar-width: none;
     }
+
     .movies-filters::-webkit-scrollbar {
         display: none;
     }
+
     .movies-filters button {
         flex-shrink: 0;
-        padding: 10px 18px;
+        padding: 9px 15px;
         font-size: 13px;
     }
+
+    /* نفس مقاسات كروت TV */
     .movies-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        width: 100%;
+        grid-template-columns: repeat(2, 160px);
+        justify-content: center;
+        gap: 22px 16px;
     }
+
     .movies-grid .movie-card {
-        width: 100%;
+        width: 160px;
+        min-width: 160px;
     }
+
     .pagination {
         gap: 7px;
         margin-top: 35px;
     }
+
     .pagination button {
         width: 38px;
         height: 38px;
         font-size: 14px;
     }
 }
+
+
+/* =========================
+   Very Small Phones
+========================= */
+
+@media (max-width: 380px) {
+    .movies-grid {
+        grid-template-columns: repeat(2, 145px);
+        gap: 18px 12px;
+    }
+
+    .movies-grid .movie-card {
+        width: 145px;
+        min-width: 145px;
+    }
+}
+
+
+/* =========================
+   Search
+========================= */
+
 .clear-search {
     margin-top: 20px;
     padding: 9px 16px;
@@ -166,10 +259,12 @@
     font-size: 13px;
     transition: 0.25s ease;
 }
+
 .clear-search:hover {
     background: #792cff;
     border-color: #792cff;
 }
+
 .search-status {
     grid-column: 1 / -1;
     min-height: 250px;
@@ -180,10 +275,12 @@
     text-align: center;
     color: white;
 }
+
 .search-status h2 {
     margin: 0 0 10px;
     font-size: 24px;
 }
+
 .search-status p {
     margin: 0;
     color: #999;
