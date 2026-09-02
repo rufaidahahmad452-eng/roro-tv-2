@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addToMyList , removeFromMyList , getMyList , addToFavorites , removeFromFavorites , getFavorites } from "../../services/storage";
  import "./MovieCard.css";
-import { IterationCcw } from "lucide-react";
-
 interface MovieCardProps { movieId: number; title: string; poster: string; rating: number;type?: "movie" | "tv"; }
 
 function MovieCard( {movieId, title, poster, rating, type="movie"} : MovieCardProps) {

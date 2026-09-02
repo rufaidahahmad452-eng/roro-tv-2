@@ -2,7 +2,6 @@ import { NavLink , useNavigate} from "react-router-dom";
 import { Search , User , Menu } from "lucide-react";
 import "./Navbar.css"
 import {  useEffect , useState , useRef } from "react";
-import { getCurrentUser , logoutUser ,type  UserData } from "../../services/storage";
 function Navbar() {
 
     const [isMenuopen , setIsMenuOpen] = useState (false);
