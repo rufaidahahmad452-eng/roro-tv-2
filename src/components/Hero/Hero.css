@@ -1,0 +1,179 @@
+.hero {
+    position: relative;
+    min-height: 405px;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+     rgba(3 , 5, 12, 0.98) 0%,
+     rgba(3 , 5, 12, 0.88) 28%,
+     rgba(3 , 5, 12, 0.52) 58%,
+     rgba(3 , 5, 12, 0.08) 100%
+     ), linear-gradient(0deg,
+     rgba(3 ,5 ,12 ,0.7), transparent 50%
+     );
+     z-index: 0;
+}
+.featured {
+    display: inline-block;
+    padding: 6px 10px;
+    margin-bottom: 14px;
+    border-radius: 5px;
+    background: rgba(111 , 35,  210,  0.3);
+    color: #c58aff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+    margin-left: 66px;
+    text-align: left;
+    padding-top: 110px;
+    padding-bottom: 40px;
+}
+.hero-content h1 {
+    font-size: 58px;
+    margin: 0 0 16px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: var(--text);
+
+}
+.hero-meta {
+    margin-bottom: 18px;
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 500;
+}
+.hero-content p {
+    max-width: 500px;
+    font-size: 14px;
+    color: var(--gray);
+    margin: 0 0 28px;
+    line-height: 1.7;
+}
+.hero-content button {
+    padding: 14px 25px;
+    border:  none;
+    border-radius: 6px;
+    background: linear-gradient(135deg , #792cff ,#6120d8);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(111 , 39,  230,  0.35);
+    transition: 0.25s ease;
+}
+.hero-content button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg ,#8b42ff , #702be8);
+    box-shadow: 0 12px 30px rgba(111 , 39,  230,  0.5);
+}
+.hero-controls {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+}
+.hero-controls button {
+    pointer-events: auto;
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(5px);
+
+}
+.hero-controls button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.06);
+}
+.hero-controls span {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ddd;
+    font-size: 11px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 470px;
+        margin: 0  0 22px;
+        padding: 0;
+        background-position: 65% center;
+    }
+    .hero::before {
+        background: linear-gradient( 90deg,
+                rgba(3, 5, 12, 0.98) 0%,
+                rgba(3, 5, 12, 0.8) 60%,
+                rgba(3, 5, 12, 0.3) 100%
+            ), linear-gradient( 0deg,
+                rgba(3, 5, 12, 0.95),
+                transparent 70%);;
+    }
+    .hero-content {
+    width: calc(100% - 40px);
+    max-width: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 30px 0;
+    text-align: left;
+    box-sizing: border-box;
+}
+    .hero-content h1 {
+        font-size: 38px;
+        line-height: 1.05;
+    }
+    .hero-content p {
+        font-size: 13px;
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .hero-content button {
+        padding: 12px 20px;
+    }
+    .hero-controls button {
+        width: 30px;
+        height:30px;
+        margin: 0 6px;
+        font-size: 28px;
+    }
+}

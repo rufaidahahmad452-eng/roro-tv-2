@@ -1,0 +1,119 @@
+.home-page {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #080711;
+    color: white;
+    overflow-x: hidden;
+}
+.content-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px 40px 10px;
+    box-sizing: border-box;
+}
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.section-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+.see-all {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background: transparent;
+    color: #9b4dff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+.see-all span {
+    font-size: 20px;
+    line-height: 10px;
+}
+.see-all:hover {
+    transform: translateX(3px);
+}
+
+.content-section .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: visible;
+}
+.content-section .movies-grid .movie-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    flex: none;
+    box-sizing: border-box;
+}
+.content-section .movies-grid .movie-poster {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    box-sizing: border-box;
+}
+.content-section .movies-grid .movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .content-section {
+        width: 100%;
+        padding: 20px 18px 5px;
+        margin: 0 auto;
+    }
+    .section-header {
+        margin-bottom: 16px;
+    }
+    .section-header h2 {
+        font-size: 20px;
+    }
+    .see-all {
+        font-size: 13px;
+    }
+    .content-section .movies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        width: 100%;
+        overflow: visible;
+    }
+    .content-section .movies-grid .movie-card {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+    .content-section .movies-grid .movie-poster {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 3;
+    }
+}
+@media (max-width: 380px) {
+    .content-section {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .content-section .movies-grid {
+        gap: 12px;
+    }
+}

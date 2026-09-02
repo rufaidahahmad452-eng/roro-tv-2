@@ -1,0 +1,25 @@
+:root{
+    --background: #080711;
+    --card: #1e293b;
+    --primary: #6d00d9;
+    --text: #f8fafc;
+    --gray: #94a3b8;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: Arial , sans-serif;
+}
+html,
+body,
+#root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+}
